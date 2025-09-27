@@ -1,0 +1,247 @@
+/*
+ * Terminal.css
+ * Styled to look like a Kali Linux Terminal Interface.
+ * Use this file in the same directory as Terminal.jsx.
+ */
+
+/* General Layout and Background */
+.terminal-page-container {
+  padding: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #1a1a1a; /* Dark background */
+  min-height: 100vh;
+  color: #f0f0f0; /* Light text for contrast */
+}
+
+/* Header Styles */
+.terminal-header-area {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e6e6e6; /* Clear white/light text */
+}
+
+.terminal-subtitle {
+  color: #a0a0a0; /* Muted grey for description */
+}
+
+/* Grid Layout */
+.terminal-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .terminal-grid-layout {
+    grid-template-columns: 2fr 1fr; /* 2/3 terminal, 1/3 sidebar */
+  }
+}
+
+/* --- Terminal Simulator Placeholder/Design (Kali Look) --- */
+.terminal-simulator-wrapper {
+  position: relative;
+}
+
+.terminal-simulator-placeholder {
+    background-color: #0a0a0a; /* True black background for terminal */
+    color: #00ff41; /* Classic Kali green text */
+    min-height: 400px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+.terminal-prompt-example {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.command-text {
+    color: #00ff41; /* Command text is green */
+}
+
+/* Animated Cursor */
+.command-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background-color: #f0f0f0; /* White block cursor */
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { background-color: transparent }
+    50% { background-color: #f0f0f0; }
+}
+/* -------------------------------------------------------- */
+
+
+/* --- Temporary Tip Popup --- */
+.terminal-tip-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* Kali-like styling: bright green background, dark text */
+  background-color: #00ff41; /* Bright terminal green */
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.tip-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.tip-icon {
+  flex-shrink: 0;
+}
+
+.tip-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.tip-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333; /* Dark icon */
+  padding: 0;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.tip-close-btn:hover {
+  color: #555;
+}
+
+/* --- Sidebar Styles --- */
+.terminal-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-card {
+  background-color: #252525; /* Slightly lighter card background */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #00ff41; /* Green accent for headings */
+}
+
+/* Quick Commands */
+.command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.command-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.command-badge {
+  /* Mimic terminal command styling */
+  background-color: #333;
+  color: #fff;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.75rem;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+.command-description {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+  margin-left: 4px;
+}
+
+/* Tips List */
+.tip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tip-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.tip-icon-wrapper {
+  padding: 6px;
+  background-color: #00ff411a; /* Green tint background */
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.tip-list-icon {
+  height: 1rem;
+  width: 1rem;
+  color: #00ff41; /* Green icon color */
+}
+
+.tip-list-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: #e6e6e6;
+}
+
+.tip-list-content {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}
+
+/* Command History */
+.history-list {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.history-item.history-command {
+  color: #00ff41; /* Green text for commands */
+}
+
+.history-item.history-placeholder {
+  color: #a0a0a0; /* Muted grey for placeholder */
+  font-style: italic;
+}

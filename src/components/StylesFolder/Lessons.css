@@ -1,0 +1,114 @@
+/*
+ * Lessons.css - Dark Theme Redesign (Kali Linux Style)
+ * Matches the dark theme and filter design of the CyberSec Hub screenshot.
+ */
+
+.lessons-container {
+  /* Inherit the overall dark page background */
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #1a1e27; /* Dark background color */
+  color: #e9ecef; /* Default light text color */
+}
+
+/*
+ * Header Styles
+ */
+.lessons-header h1 {
+  font-size: 2.2rem;
+  color: #e9ecef; /* Bright text for the title */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.lessons-header p {
+  color: #adb5bd; /* Subtle grey for descriptive text */
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * Filter Section Styles
+ */
+.filters {
+  margin: 1.5rem 0;
+}
+
+/* Search Input Field */
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  /* Dark input field with a purple/blue border accent */
+  border: 1px solid #3d4a5c;
+  background-color: #212836;
+  border-radius: 6px;
+  color: #e9ecef;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #6c757d;
+}
+
+.search-input:focus {
+  border-color: #6c5ce7; /* Bright purple/blue on focus */
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.4);
+  outline: none;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+  /* Display filter groups horizontally (like Category/Difficulty) */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Filter Buttons (All, File System, Beginner, etc.) */
+.filter-btn {
+  padding: 0.5rem 1rem;
+  margin: 0.3rem 0.5rem 0.3rem 0; /* Add margin for spacing between buttons */
+  border: 1px solid #3d4a5c; /* Dark border */
+  border-radius: 6px;
+  background: #2a3240; /* Darker button background */
+  color: #adb5bd; /* Light text */
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #3d4a5c; /* Slightly lighter on hover */
+  color: #e9ecef;
+}
+
+.filter-btn.active {
+  /* Bright accent color for the active state (matching the screenshot) */
+  background: #6c5ce7; /* Vivid purple/blue accent */
+  color: white;
+  border-color: #6c5ce7;
+  font-weight: 600;
+}
+
+/*
+ * Command Grid Styles
+ */
+.command-grid {
+  /* Matches the layout shown in the screenshot */
+  display: grid;
+  gap: 1.5rem; /* Increased gap for better separation */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
+  padding-top: 1rem;
+}
+
+.no-results {
+  text-align: center;
+  color: #adb5bd;
+  padding: 3rem;
+  font-size: 1.2rem;
+  border: 1px dashed #3d4a5c; /* A subtle border for the no-results message */
+  border-radius: 8px;
+  margin-top: 2rem;
+}

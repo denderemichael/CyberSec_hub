@@ -1,0 +1,110 @@
+/*
+ * CommandCard.css - Dark Theme Redesign
+ * Matches the aesthetic of the provided CyberSec Hub screenshot.
+ */
+
+.command-card {
+  /* Dark background for the card, matching the lesson cards */
+  border: 1px solid #1f2736; /* Subtle, darker border */
+  border-radius: 8px;
+  padding: 1rem;
+  background: #1e2532; /* Slightly lighter than the main page background */
+  transition: 0.3s ease;
+  color: #e9ecef; /* Default light text color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.command-card:hover {
+  /* Accent color on hover for feedback, using a purple/blue glow */
+  box-shadow: 0 0 10px rgba(52, 54, 185, 0.6), 0 0 20px rgba(16, 18, 112, 0.452);
+  transform: translateY(-2px); /* Slight lift for a modern feel */
+  background: #252c38; /* Slightly darker background on hover */
+}
+
+.command-title {
+  /* Bright, clear title text */
+  font-size: 1.3rem;
+  color: #e9ecef; /* Light text on dark background */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.command-description {
+  /* Standard text color for readability */
+  margin: 0.5rem 0;
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.command-options ul,
+.command-examples ul {
+  padding-left: 1.2rem;
+  color: #adb5bd;
+}
+
+.command-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align items */
+  margin-top: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem; /* Slightly smaller for a cleaner look */
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px; /* Slightly sharper corners for tags */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Category Tags --- */
+.tag.category {
+  /* Using a dark accent for the category background */
+  background: #34495e;
+  color: #e9ecef;
+}
+
+/* --- Difficulty Tags (Matching the bright colors in the screenshot) --- */
+
+.tag.difficulty.beginner {
+  /* Green from the screenshot */
+  background: #2ecc71;
+  color: #1e2532; /* Dark text on bright background */
+}
+
+.tag.difficulty.intermediate {
+  /* Yellow/Orange from the screenshot */
+  background: #f1c40f;
+  color: #1e2532;
+}
+
+.tag.difficulty.advanced {
+  /* Red/Maroon from the screenshot */
+  background: #e74c3c;
+  color: white;
+}
+
+/* --- Optional: Add a style for the code-example part based on the screenshot --- */
+.command-card .code-example {
+  background-color: #0d1117; /* Very dark background for the terminal/code area */
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto; /* Ensure code can scroll if too long */
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.command-card .code-example span.prompt {
+  /* Style for the 'kali@cybersec:~$' part */
+  color: #7f8c8d; /* Grey color for the terminal prompt */
+}
+
+.command-card .code-example span.command {
+  /* Style for the actual command ('ls -la', 'pwd', etc.) */
+  color: #20b2aa; /* A light sea green or cyan for the command text */
+  font-weight: bold;
+}
