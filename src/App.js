@@ -6,6 +6,7 @@ import "./App.css";
 import Homepage from "./components/Homepage";
 import Lessons from "./components/Lessons";
 import Terminal from "./components/Terminal";
+import Challenges  from "./components/Challenges";
 
 // Sidebar
 import KaliSidebar from "./components/KaliSidebar";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/lessons" element={<Lessons />} />
             <Route path="/terminal" element={<Terminal />} />
+            <Route path="/challenges" element={<Challenges />} />
           </Routes>
         </div>
       </div>

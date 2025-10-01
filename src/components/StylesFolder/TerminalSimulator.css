@@ -1,0 +1,178 @@
+/*
+ * TerminalSimulator.css - High-fidelity Kali Linux Terminal Look
+ */
+
+/* --- Terminal Colors (Kali Defaults) --- */
+:root {
+  --kali-bg: #000000;         /* True Black */
+  --kali-text: #00ff00;       /* Bright Green */
+  --kali-prompt-user: #00FFFF; /* Cyan for User/Host */
+  --kali-prompt-dir: #00ff00; /* Green for Directory/Path */
+  --kali-error: #FF0000;      /* Red */
+  --kali-header-bg: #3c3c3c;  /* Dark Gray Header */
+}
+
+/* --- Main Window Container --- */
+.terminal-window {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: var(--kali-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: 'Consolas', 'Monaco', monospace; /* Use monospaced font for authenticity */
+}
+
+.default-size {
+  height: 600px;
+}
+
+.maximized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+}
+
+/* --- Header Bar (Title bar) --- */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: var(--kali-header-bg);
+  border-bottom: 1px solid #000;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.terminal-header-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 10px;
+}
+
+.dot-close, .dot-minimize, .dot-maximize {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.dot-close { background-color: #ff5f56; } 
+.dot-minimize { background-color: #ffbd2e; } 
+.dot-maximize { background-color: #27c93f; } 
+
+.terminal-title-text {
+  font-size: 0.85rem;
+  color: #c9c9c9; 
+  flex-grow: 1; 
+  text-align: center;
+}
+
+.terminal-actions {
+  margin-left: auto;
+}
+
+.terminal-action-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #c9c9c9;
+  transition: color 0.2s;
+}
+
+.terminal-action-btn:hover {
+  color: #ffffff;
+}
+
+.icon-size {
+  width: 14px;
+  height: 14px;
+}
+
+/* --- Terminal Content (Output and Input) --- */
+.terminal-content {
+  flex-grow: 1;
+  padding: 10px 15px;
+  background-color: var(--kali-bg);
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  cursor: text;
+  text-shadow: 0 0 1px var(--kali-text); /* Subtle CRT effect */
+}
+
+.terminal-line {
+  margin-bottom: 2px;
+}
+
+/* Styles for the command prompt in history */
+.terminal-prompt-history {
+  display: inline;
+}
+
+.prompt-user-host {
+  color: var(--kali-prompt-user); 
+  font-weight: bold;
+}
+
+.prompt-dir {
+  color: var(--kali-prompt-dir); 
+  font-weight: bold;
+}
+
+.prompt-command-text {
+    color: var(--kali-text); 
+    margin-left: 5px;
+}
+
+/* Styles for output */
+.terminal-output-text {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--kali-text);
+}
+
+.error-style {
+    color: var(--kali-error) !important; /* Red for errors */
+}
+
+/* --- Current Live Input Styling --- */
+.terminal-input-line {
+  display: flex;
+  align-items: baseline;
+  padding-top: 5px;
+}
+
+.terminal-prompt-live {
+  white-space: nowrap;
+}
+
+.terminal-input-field {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--kali-text);
+  font-size: 0.95rem;
+  padding-left: 5px;
+  /* Authentic blinking block cursor */
+  caret-color: transparent; /* Hide default cursor */
+  border-right: 1px solid var(--kali-text); /* Custom block cursor line */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-right-color: transparent; }
+    50% { border-right-color: #f0f0f0; } 
+}

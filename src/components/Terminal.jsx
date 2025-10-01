@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Terminal as TerminalIcon, Zap, Shield, Target, XCircle } from 'lucide-react';
-import './StylesFolder/Terminal.css'; // Make sure Terminal.css is in the same directory
+import './StylesFolder/Terminal.css'; // Make sure Terminal.css is in the correct path
 
-// --- Placeholder for the Terminal Simulator component ---
-const TerminalSimulatorPlaceholder = () => (
-    <div className="terminal-simulator-placeholder">
-        <p className="terminal-prompt-example">kali@kali:~$ <span className="command-text">ls -la</span></p>
-        <p className="terminal-output-example">total 16</p>
-        <p className="terminal-prompt-example">kali@kali:~$ <span className="command-cursor"></span></p>
-    </div>
-);
-// --------------------------------------------------------
+// 1. ADD THIS IMPORT LINE:
+import TerminalSimulator from './TerminalSimulator'; // Assuming TerminalSimulator.jsx is in the same directory
+
+// --- REMOVE the TerminalSimulatorPlaceholder function entirely ---
 
 
 const QUICK_COMMANDS = [
@@ -83,19 +78,20 @@ export default function Terminal() {
                             </button>
                         </div>
                     )}
-                    {/* Replaced TerminalSimulator with Placeholder */}
-                    <TerminalSimulatorPlaceholder />
+                    
+                    {/* 2. RENDER THE ACTUAL COMPONENT HERE: */}
+                    <TerminalSimulator />
+                    
                 </div>
 
                 {/* Sidebar */}
                 <div className="terminal-sidebar">
-                    {/* Quick Commands (Replaced Card with div) */}
+                    {/* Quick Commands */}
                     <div className="sidebar-card">
                         <h3 className="card-title">Quick Commands</h3>
                         <div className="command-list">
                             {QUICK_COMMANDS.map((cmd) => (
                                 <div key={cmd.name} className="command-item">
-                                    {/* Replaced Badge with div */}
                                     <div className="command-badge">
                                         {cmd.name}
                                     </div>
@@ -105,7 +101,7 @@ export default function Terminal() {
                         </div>
                     </div>
 
-                    {/* Tips (Replaced Card with div) */}
+                    {/* Tips */}
                     <div className="sidebar-card">
                         <h3 className="card-title">Terminal Tips</h3>
                         <div className="tip-list">
@@ -123,7 +119,7 @@ export default function Terminal() {
                         </div>
                     </div>
 
-                    {/* Command History (Replaced Card with div) */}
+                    {/* Command History */}
                     <div className="sidebar-card">
                         <h3 className="card-title">Recent Commands</h3>
                         <div className="history-list">
